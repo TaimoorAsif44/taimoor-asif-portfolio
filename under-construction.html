@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicons/favicon.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#a789d4">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Under Construction - Taimoor's Portfolio</title>
+    
+    <style>
+        /* Under Construction Page Specific Styles */
+        .construction-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            background: var(--body-color);
+        }
+
+        .construction-icon {
+            font-size: 8rem;
+            color: var(--first-color);
+            margin-bottom: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .construction-title {
+            font-size: var(--biggest-font-size);
+            color: var(--first-color);
+            margin-bottom: 1rem;
+        }
+
+        .construction-subtitle {
+            font-size: var(--h2-font-size);
+            color: var(--title-color);
+            margin-bottom: 2rem;
+        }
+
+        .construction-description {
+            font-size: var(--normal-font-size);
+            color: var(--text-color);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .construction-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .construction-feature {
+            background: var(--container-color);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .construction-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.2);
+        }
+
+        .construction-feature-icon {
+            font-size: 2rem;
+            color: var(--first-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .construction-feature-text {
+            font-size: var(--small-font-size);
+            color: var(--text-color);
+        }
+
+        .construction-progress {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--container-color);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+            border-radius: 4px;
+            animation: progress 2s ease-out forwards;
+        }
+
+        @keyframes progress {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 65%;
+            }
+        }
+
+        .progress-text {
+            font-size: var(--small-font-size);
+            color: var(--text-color-light);
+        }
+
+        .construction-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--first-color);
+            color: var(--title-color);
+            border-radius: 0.5rem;
+            font-weight: var(--font-medium);
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: var(--first-color-alt);
+            transform: translateY(-2px);
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: var(--first-color);
+            border: 2px solid var(--first-color);
+            border-radius: 0.5rem;
+            font-weight: var(--font-medium);
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background: var(--first-color);
+            color: var(--title-color);
+        }
+
+        /* Gear animation */
+        .gear-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .gear {
+            font-size: 4rem;
+            color: var(--first-color);
+            animation: rotate 4s linear infinite;
+        }
+
+        .gear-small {
+            font-size: 2rem;
+            color: var(--first-color-alt);
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            animation: rotate-reverse 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-reverse {
+            from {
+                transform: rotate(360deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .construction-icon {
+                font-size: 5rem;
+            }
+
+            .construction-title {
+                font-size: var(--h1-font-size);
+            }
+
+            .construction-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Taimoor Asif</a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">
+                            <i class='bx bx-home'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="index.html#about" class="nav__link">
+                            <i class='bx bx-user'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="index.html#skills" class="nav__link">
+                            <i class='bx bx-book'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="index.html#work" class="nav__link">
+                            <i class='bx bx-briefcase-alt-2'></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <a href="index.html#contact" class="nav__link">
+                            <i class='bx bx-message-square-dots'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="detail-portfolio.html" class="nav__link active-link">
+                            <i class='bx bx-layer'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--=============== theme change button ===============-->
+            <i class='bx bx-moon change-theme change-theme-button' id="theme-button"></i>
+
+        </nav>
+    </header>
+
+    <div class="construction-container" style="padding-top: 5rem;">
+        <div class="gear-container">
+            <i class='bx bx-cog gear'></i>
+            <i class='bx bx-cog gear-small'></i>
+        </div>
+
+        <h1 class="construction-title">Under Construction</h1>
+        <h2 class="construction-subtitle">Detailed Portfolio Coming Soon</h2>
+
+        <p class="construction-description">
+            I'm currently working on building a comprehensive portfolio showcase. This page will feature detailed project descriptions, case studies, and an in-depth look at my work process and achievements.
+        </p>
+
+        <div class="construction-features">
+            <div class="construction-feature">
+                <i class='bx bx-code-alt construction-feature-icon'></i>
+                <p class="construction-feature-text">Project Case Studies</p>
+            </div>
+            <div class="construction-feature">
+                <i class='bx bx-image-alt construction-feature-icon'></i>
+                <p class="construction-feature-text">Design Process</p>
+            </div>
+            <div class="construction-feature">
+                <i class='bx bx-rocket construction-feature-icon'></i>
+                <p class="construction-feature-text">Live Demos</p>
+            </div>
+            <div class="construction-feature">
+                <i class='bx bx-testimonial construction-feature-icon'></i>
+                <p class="construction-feature-text">Client Testimonials</p>
+            </div>
+        </div>
+
+        <div class="construction-progress">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">Progress: 65% Complete</p>
+        </div>
+
+        <div class="construction-buttons">
+            <a href="index.html" class="back-button">
+                <i class='bx bx-arrow-back'></i>
+                Back to Home
+            </a>
+            <a href="index.html#work" class="contact-button">
+                <i class='bx bx-folder-open'></i>
+                View Projects
+            </a>
+        </div>
+    </div>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/mixitup.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
